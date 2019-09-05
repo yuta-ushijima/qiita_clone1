@@ -62,3 +62,18 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'active_model_serializers'
+#ruby にさえ慣れていれば、どんな json を返すのかが感覚的にわかる
+
+gem 'devise_token_auth'
+# トークン形式のユーザー認証をする仕組みを導入する gem。
+
+gem 'rubocop-rails'
+# 静的解析ツール rubocop に内包されていた rails に関する解析部分が rubocop-rails に分離されました。yml ファイルの設定で、rails 向けの設定の ON/OFF 切り替えが可能です。
+gem 'annotate'
+#model や rspec のファイルに、対象の table の schema を書き出してくれる gem。
+#プロジェクトによっていれたりいれなかったりだが、いちいち schema ファイルを確認する必要がないので便利。
+gem 'pry-bug'
+gem 'pry-rails'
+gem 'pry-doc'
