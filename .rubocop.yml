@@ -1,6 +1,9 @@
-inherit_from: .rubocop_todo.yml
+require:
+  - rubocop-rails
 
 AllCops:
+   Include:
+    - rubocop-rspec
   Exclude:
     - bin/*
     - db/schema.rb
@@ -9,3 +12,13 @@ AllCops:
 
 Style/Documentation:
   Enabled: false
+
+# 式展開したいときに書き換えるのが面倒
+# 文章ではダブルクォートよりもシングルクォートの方が頻出
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+# 式展開中でもダブルクォートを使う
+# 普段の文字列リテラルがダブルクォートなので使い分けるのが面倒
+Style/StringLiteralsInterpolation:
+  EnforcedStyle: double_quotes
