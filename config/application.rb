@@ -12,12 +12,20 @@ module QiitaClone1
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
+
     config.generators do |g|
-      # Settings in config/environments/* take precedence over those specified here.
-      # Application configuration can go into files in config/initializers
-      # -- all .rb files in that directory are automatically loaded after loading
-      # the framework and any gems in your application.
-      g.test_framework :rspec
+      g.javascripts false
+      g.styesheets false
+      g.helper false
+      g.test_framework :rspec,
+                       view_specs: false,
+                       routing_specs: false,
+                       controller_specs: false,
+                       request_specs: true
     end
+    # Settings in config/environments/* take precedence over those specified here.
+    # Application configuration can go into files in config/initializers
+    # -- all .rb files in that directory are automatically loaded after loading
+    # the framework and any gems in your application.
   end
 end
