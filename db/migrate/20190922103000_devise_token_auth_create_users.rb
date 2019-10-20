@@ -46,7 +46,7 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration[5.2]
       t.timestamps
     end
 
-    chage_table :users, bulk: true
+    change_table :users, bulk: true
     # add_index :users, :email,                unique: true
     # add_index :users, [:uid, :provider],     unique: true
     # add_index :users, :reset_password_token, unique: true
