@@ -2878,3 +2878,97 @@ Migrating to CollectUsers (20191026082036)
   [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rasheeda@mann.io' AND `users`.`provider` = 'email' LIMIT 1[0m
   [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'rasheeda@mann.io' LIMIT 1[0m
   [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (2.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (3.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticle Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM `articles` WHERE `articles`.`title` = BINARY 'ivtkw5o' LIMIT 1[0m
+  [1m[35m (1.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticle Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM `articles` WHERE `articles`.`title` IS NULL LIMIT 1[0m
+  [1m[35m (1.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticle Exists (2.4ms)[0m  [1m[34mSELECT  1 AS one FROM `articles` WHERE `articles`.`title` = BINARY 'y2hmzzo13icy6s6aq0ji373bkyuadnr1ez84ca7xf8ckx0oy72jikdbi305csscu3hb6yuf8gfu83487gh45idhranwiphuve10vbh9lye2eir9ggjp0dfpmt8grumt057cq5mys4vnmah7owbnyjsa8qk0jnk78aqbxmvf43dms6uk9kd9tc8sol9tca3vvpby7mz6ekjupdv6pw8m7ogtuwiihbmhm3kgu6jati4u59vmt3i0lgvpilsnejj6ncx0bm29gxhqp49h5sv3bddy18thdlgrqgizqthrkajh0t3h8xro0zuigi7bnpowb1p3foyju5sowzf4zf6npcgq9nx7t6gbwlqwni6qsq13w6upai9v9ybqfq19gsdedf4eu6s7rtq0vacxi5ltmqlwxk7fmrljz0nxkrxfdv3k9m4lmanmtfe2mwilafgf5udvaqsabodi5s5wfgrlp6ecl1r0b5qgcsv9z7qpbb0l6mpqexq3ijbcsctxbq5atfzesoh7feat18fuege43vspodovihkuurh1kpx51hrupdz13nywr0ltncxh1nzus1yaxh9e5l0op3hz1yf96g8l84yiye7yoiesmcy6t552tz0pgdypnigmq12th8uh6c76j5anppd38gibciopxbmue62m85wad4nnid571oho8orlq9fnef1k9dy4lo3fabse4dzdpka16fv3fg66pjb1znor5qjtlc7sdvee2ylk30ecbimlo32b' LIMIT 1[0m
+  [1m[35m (1.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'palmer_reichel@ernser.net' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'palmer_reichel@ernser.net' LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'mana.mertz@will.info' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'mana.mertz@will.info' LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` IS NULL AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` IS NULL LIMIT 1[0m
+  [1m[35m (1.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'valene@lehner.biz' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'valene@lehner.biz' LIMIT 1[0m
+  [1m[35m (1.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (2.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'haruka@ayase.com' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'haruka@ayase.com' LIMIT 1[0m
+  [1m[36mUser Create (2.9ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `name`, `email`, `created_at`, `updated_at`) VALUES ('haruka@ayase.com', '$2a$11$Dic5kSadPNCFW2X93UpJHeuFGnYHoAmQ9.2EOOpwZH7RokBlIZYRm', 'Winky', 'haruka@ayase.com', '2019-11-03 21:35:57', '2019-11-03 21:35:57')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'haruka@ayase.com' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'haruka@ayase.com' LIMIT 1[0m
+  [1m[35m (3.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'katharine.schaefer@emard.name' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'katharine.schaefer@emard.name' LIMIT 1[0m
+  [1m[35m (1.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (2.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticle Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM `articles` WHERE `articles`.`title` = BINARY 'tqysvr00u2qw35ri6noocj5hansuzgmb' LIMIT 1[0m
+  [1m[35m (1.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticle Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM `articles` WHERE `articles`.`title` IS NULL LIMIT 1[0m
+  [1m[35m (1.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticle Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM `articles` WHERE `articles`.`title` = BINARY 'kb35gapoh5io9p88822st03b86b3f49zzwvcub0f7cjs40q22ah6hri0cwir5z4tbgt4mae35ssxnvhdq9b3qbpk4ie21o9b49jd9s22mxuygi1ohl2m1k7mdbgfl79kni75hsq5yngkd15a7yqchz4ete2lhmmcma6jpw50lsshzu8a3jrz29fexua9xqwfybb37o0hc8stq6zcfz3a7rbppnkc1ob6laqyatca0kenw1flcqvpqop8o77bx2vjvgipd4hhpcup1qd9vsqf0z4fe03zxqt6bixfmvdwz2feg7xiqjl9rr3x9jgvdewwd17br1w7eljdvbqh1561ierh9anl58l7oyzswuqxrlh17c6wfi1llaszlmxx7vvxj06wyled40nwaqzd4ufhee7r3g6sygz6386mmvgawer66f931c7f7eplcbquiw2w1tiln4eziaedqqi2cgbo8v75dlos8eiyto5b4ey9fx67hl220mtd96by8oochr1n4rqg5m9g6k6q16r535ldtfpxx24qexmecywqsrdvo5lkz0q7n5j9k4mpzmsi9pjg8xlx319guk7ug498uv6ipegywylt68mj6cyu4koybipnahp2jju06ove8jcbsjgclv4t7flespgbu9rg9zi262f2lxexflvn9j7eduvwggsndwhy0hnq39ah4078tj972b9srag3q6b2e8nrdg1bhcdm4h75l2e8xkip16kb2k369hwk6jzucdxfrqwl1gwey511s63q6skvh7hblpo19jfbn1wqsyupshm2jcwbtdre9q5hmq5e15uniawtji4xfjjzyug28x10n1srigz96u1f835z6c5chsi8gsh4p7gu0g1ottbh3l08i4yqcz0vrfhjo1cmlcj' LIMIT 1[0m
+  [1m[35m (1.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'taylor.white@howe.info' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'taylor.white@howe.info' LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'garland_bruen@schimmel.name' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'garland_bruen@schimmel.name' LIMIT 1[0m
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` IS NULL AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` IS NULL LIMIT 1[0m
+  [1m[35m (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'damion@sanfordtowne.org' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'damion@sanfordtowne.org' LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'haruka@ayase.com' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'haruka@ayase.com' LIMIT 1[0m
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO `users` (`uid`, `encrypted_password`, `name`, `email`, `created_at`, `updated_at`) VALUES ('haruka@ayase.com', '$2a$11$.kGwvtLhwjsXmND9SMor0ebuiASzZVjDdpQ1fA1K35FIevTRuXnXe', 'Mr. Borgin', 'haruka@ayase.com', '2019-11-03 21:36:52', '2019-11-03 21:36:52')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'haruka@ayase.com' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'haruka@ayase.com' LIMIT 1[0m
+  [1m[35m (3.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'andre_huel@ritchiecruickshank.com' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'andre_huel@ritchiecruickshank.com' LIMIT 1[0m
+  [1m[35m (1.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'katharina_abbott@rennerrutherford.net' AND `users`.`provider` = 'email' LIMIT 1[0m
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'katharina_abbott@rennerrutherford.net' LIMIT 1[0m
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m

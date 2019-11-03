@@ -50,7 +50,7 @@ RSpec.describe User, type: :model do
   end
 
   context "パスワードが短すぎる場合" do
-    let(:user) { build(:user, password: "math") }
+    let(:user) { build(:user, password: Faker::Lorem.characters(number: rand(1..7))) }
 
     it "エラーする" do
       user.valid?
