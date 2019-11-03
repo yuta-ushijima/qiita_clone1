@@ -19,7 +19,7 @@ RSpec.describe Article, type: :model do
   end
 
   context "titleが長すぎるとき" do
-    let(:article) { build(:article, title: Faker::Lorem.characters(number: Random.new.rand(65..999)))}
+    let(:article) { build(:article, title: Faker::Lorem.characters(number: Random.new.rand(65..999))) }
 
     it "エラーする" do
       article.valid?
