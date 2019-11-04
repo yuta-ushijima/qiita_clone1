@@ -1,8 +1,10 @@
 require "rails_helper"
 
 RSpec.describe Article, type: :model do
+
   context "正常系" do
-    let(:article) { build(:article) }
+    let(:user) { build(:user) }
+    let(:article) { build(:article, user: user) }
 
     it "記事が有効である" do
       expect(article).to be_valid
