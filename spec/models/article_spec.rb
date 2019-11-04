@@ -4,7 +4,7 @@ RSpec.describe Article, type: :model do
   context "正常系" do
     let(:article) { build(:article) }
 
-    it "記事の作成・保存完了" do
+    it "記事が有効である" do
       expect(article).to be_valid
     end
   end

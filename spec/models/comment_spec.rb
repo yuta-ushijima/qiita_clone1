@@ -4,7 +4,7 @@ RSpec.describe Comment, type: :model do
   context "コメントがあるとき" do
     let(:article) { build(:article) }
     let(:comment) { build(:comment, article: article) }
-    it "コメントの保存完了" do
+    it "コメントが有効である" do
       expect(comment).to be_valid
     end
   end

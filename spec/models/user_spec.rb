@@ -4,7 +4,7 @@ RSpec.describe User, type: :model do
   context "名前とアドレスとパスワードが入力されている時" do
     let(:user) { build(:user)}
 
-    it "ユーザー登録完了" do
+    it "ユーザーが有効である" do
       expect(user).to be_valid
     end
   end
