@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :comment do
-    body { "MyText" }
-    user_id { 1 }
-    article_id { 1 }
+    body { Faker::Movies::HarryPotter.quote }
+    user
+    article
   end
 end

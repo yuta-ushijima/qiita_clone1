@@ -61,3 +61,4 @@ yarn-debug.log*
 
 log/development.log
 qiita1.pdf
+log/test.log
