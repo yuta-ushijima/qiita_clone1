@@ -2,8 +2,6 @@ require "rails_helper"
 
 RSpec.describe Comment, type: :model do
   context "コメントがあるとき" do
-    #let(:user) { build(:user) }
-    #let(:article) { build(:article) }
     let(:comment) { build(:comment) }
     it "コメントが有効である" do
       expect(comment).to be_valid
