@@ -9,8 +9,7 @@ RSpec.describe Comment, type: :model do
   end
 
   context "コメントがないとき" do
-    let(:article) { build(:article) }
-    let(:comment) { build(:comment, body: nil, article: article) }
+    let(:comment) { build(:comment, body: nil) }
 
     it "エラーする" do
       comment.valid?
