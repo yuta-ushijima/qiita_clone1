@@ -10,7 +10,6 @@ RSpec.describe "Api::V1::Articles", type: :request do
 
 
     it "記事の一覧が取得できる" do
-      #get api_v1_articles_path
       subject
       res = JSON.parse(response.body)
 
