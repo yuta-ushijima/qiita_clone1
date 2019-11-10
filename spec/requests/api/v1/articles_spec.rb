@@ -15,7 +15,7 @@ RSpec.describe "Api::V1::Articles", type: :request do
 
       expect(response).to have_http_status(200)
       expect(res.length).to eq Article.count
-      expect(res[0].keys).to eq ["id", "title", "body"]
+      expect(res[0].keys).to eq ["id", "title", "body", "user"]
     end
   end
 
@@ -43,6 +43,21 @@ RSpec.describe "Api::V1::Articles", type: :request do
       it "記事が見つからない" do
         expect { subject }.to raise_error ActiveRecord::RecordNotFound
       end
+    end
+  end
+
+  describe "POST /api/v1/articles" do
+
+    subject { post(api_v1_articles_path, params: params) }
+    before do
+      current_user = create(:user)
+    end
+    #let(:current_user) { create(:user) }
+    let(:params) {{ article: attributes_for(:article) }}
+
+    it "新規記事を作成できる" do
+      expect {subject}.to change {Article.count}.by(1)
+      expect(response).to have_http_status(200)
     end
   end
 end
