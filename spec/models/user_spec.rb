@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe User, type: :model do
   context "名前とアドレスとパスワードが入力されている時" do
-    let(:user) { build(:user)}
+    let(:user) { build(:user) }
 
     it "ユーザーが有効である" do
       expect(user).to be_valid

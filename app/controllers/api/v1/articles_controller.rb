@@ -19,11 +19,9 @@ class Api::V1::ArticlesController < Api::V1::BaseApiController
     article.update!(article_params)
   end
 
-
-
   private
 
-  def article_params
-    params.require(:article).permit(:title, :body)
-  end
+    def article_params
+      params.require(:article).permit(:title, :body)
+    end
 end
