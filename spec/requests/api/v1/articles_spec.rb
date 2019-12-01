@@ -91,4 +91,31 @@ RSpec.describe "Api::V1::Articles", type: :request do
       end
     end
   end
+
+  describe "DELETE /api/v1/articles/:id" do
+    subject { delete(api_v1_article_path(article.id), params: params) }
+    let!(:article) { create(:article, user: current_user) }
+    let(:current_user) { create(:user) }
+    let(:params) { { article: attributes_for(:article) } }
+    before do
+      allow_any_instance_of(Api::V1::BaseApiController).to receive(:current_user).and_return(current_user)
+    end
+
+    context "自分の記事を削除するとき" do
+      it "記事の削除ができる" do
+        expect { subject }.to change { Article.where(user_id: current_user.id).count }.by(-1)
+        expect(response).to have_http_status(204)
+      end
+    end
+
+    context "他のuserの記事を削除するとき" do
+      let!(:article) { create(:article, user: other_user) }
+      let(:other_user) { create(:user) }
+      let(:params) { { article: attributes_for(:article) } }
+
+      it "削除できない" do
+        expect { subject }.to raise_error ActiveRecord::RecordNotFound
+      end
+    end
+  end
 end
