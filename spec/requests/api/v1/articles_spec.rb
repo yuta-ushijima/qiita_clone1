@@ -56,7 +56,7 @@ RSpec.describe "Api::V1::Articles", type: :request do
     end
 
     it "新規記事を作成できる" do
-      expect { subject }.to change { Article.where(user_id: current_user.id).count }.by(1)
+      expect { subject }.to change { current_user.articles.count }.by(1)
       expect(response).to have_http_status(:ok)
       res = JSON.parse(response.body)
       expect(res["title"]).to eq params[:article][:title]
@@ -94,6 +94,7 @@ RSpec.describe "Api::V1::Articles", type: :request do
 
   describe "DELETE /api/v1/articles/:id" do
     subject { delete(api_v1_article_path(article.id), params: params) }
+
     let!(:article) { create(:article, user: current_user) }
     let(:current_user) { create(:user) }
     let(:params) { { article: attributes_for(:article) } }
@@ -103,8 +104,8 @@ RSpec.describe "Api::V1::Articles", type: :request do
 
     context "自分の記事を削除するとき" do
       it "記事の削除ができる" do
-        expect { subject }.to change { Article.where(user_id: current_user.id).count }.by(-1)
-        expect(response).to have_http_status(204)
+        expect { subject }.to change { current_user.articles.count }.by(-1)
+        expect(response).to have_http_status(:no_content)
       end
     end
 
