@@ -19,9 +19,14 @@ class Api::V1::ArticlesController < Api::V1::BaseApiController
     article.update!(article_params)
   end
 
-  private
+  def destroy
+    article = current_user.articles.find(params[:id])
+    article.destroy!
+  end
 
-    def article_params
-      params.require(:article).permit(:title, :body)
-    end
-end
+   private
+
+     def article_params
+       params.require(:article).permit(:title, :body)
+     end
+ end
