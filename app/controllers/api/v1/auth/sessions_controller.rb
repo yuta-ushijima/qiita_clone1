@@ -5,14 +5,8 @@ class Api::V1::Auth::SessionsController < DeviseTokenAuth::SessionsController
   end
 
   def create
-    current_user = User.find_by(email: session_params[:email], password: session_params[:password])
-
-    if current_user != nil
-      render json: current_user
-
-    else
-      render :new
-    end
+    #継承についてDeviseTokenAuth::SessionsControllerは公式ドキュメントを確認する
+    super
   end
 
   private
