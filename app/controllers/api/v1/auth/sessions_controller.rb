@@ -1,14 +1,6 @@
 class Api::V1::Auth::SessionsController < DeviseTokenAuth::SessionsController
   #before_action :authenticate_api_v1_user!
-
-  def new
-  end
-
-  def create
-    #継承についてDeviseTokenAuth::SessionsControllerは公式ドキュメントを確認する
-    super
-  end
-
+  #基本的にメソッドは継承元のものを使えば良いのでここでではパラメータの制限のみを記述している。
   private
 
   def session_params
