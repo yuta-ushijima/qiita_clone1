@@ -31,5 +31,6 @@ module QiitaClone1
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.middleware.use ActionDispatch::Flash
+    config.middleware.use Rack::MethodOverride
   end
 end
