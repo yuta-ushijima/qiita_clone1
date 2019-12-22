@@ -1,9 +1,13 @@
 class Api::V1::Auth::SessionsController < DeviseTokenAuth::SessionsController
-  #before_action :authenticate_api_v1_user!
-  #基本的にメソッドは継承元のものを使えば良いのでここでではパラメータの制限のみを記述している。
-  private
+  before_action :authenticate_user!, only: [:destroy]
 
-  def session_params
-    params.require(:session).permit(:email, :password)
+  def create
+    super
   end
+
+  def destroy
+    super
+  end
+
+
 end
