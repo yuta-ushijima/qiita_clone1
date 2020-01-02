@@ -51,7 +51,7 @@ RSpec.describe "Api::V1::Articles", type: :request do
 
     let(:params) { { article: attributes_for(:article) } }
     let(:current_user) { create(:user) }
-    let(:headers) { current_user.create_new_auth_token }
+    let(:headers) { authenticate_user_headers(current_user) }
 
     it "新規記事を作成できる" do
       expect { subject }.to change { current_user.articles.count }.by(1)
@@ -67,7 +67,7 @@ RSpec.describe "Api::V1::Articles", type: :request do
 
     let(:params) { { article: attributes_for(:article) } }
     let(:current_user) { create(:user) }
-    let(:headers) { current_user.create_new_auth_token }
+    let(:headers) { authenticate_user_headers(current_user) }
 
     context "自分の記事を更新するとき" do
       let(:article) { create(:article, user: current_user) }
@@ -94,7 +94,7 @@ RSpec.describe "Api::V1::Articles", type: :request do
     let!(:article) { create(:article, user: current_user) }
     let(:current_user) { create(:user) }
     let(:params) { { article: attributes_for(:article) } }
-    let(:headers) { current_user.create_new_auth_token }
+    let(:headers) { authenticate_user_headers(current_user) }
 
 
     context "自分の記事を削除するとき" do

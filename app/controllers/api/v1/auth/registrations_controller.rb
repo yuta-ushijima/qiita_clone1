@@ -1,7 +1,4 @@
 class Api::V1::Auth::RegistrationsController < DeviseTokenAuth::RegistrationsController
-  def create
-    super
-  end
 
   private
 
