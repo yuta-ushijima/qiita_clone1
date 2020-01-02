@@ -53,10 +53,6 @@ RSpec.describe "Api::V1::Articles", type: :request do
     let(:current_user) { create(:user) }
     let(:headers) { current_user.create_new_auth_token }
 
-    #before do
-      #allow_any_instance_of(Api::V1::BaseApiController).to receive(:current_user).and_return(current_user)
-    #end
-
     it "新規記事を作成できる" do
       expect { subject }.to change { current_user.articles.count }.by(1)
       expect(response).to have_http_status(:ok)
@@ -72,9 +68,6 @@ RSpec.describe "Api::V1::Articles", type: :request do
     let(:params) { { article: attributes_for(:article) } }
     let(:current_user) { create(:user) }
     let(:headers) { current_user.create_new_auth_token }
-    #before do
-     # allow_any_instance_of(Api::V1::BaseApiController).to receive(:current_user).and_return(current_user)
-    #end
 
     context "自分の記事を更新するとき" do
       let(:article) { create(:article, user: current_user) }
@@ -102,9 +95,7 @@ RSpec.describe "Api::V1::Articles", type: :request do
     let(:current_user) { create(:user) }
     let(:params) { { article: attributes_for(:article) } }
     let(:headers) { current_user.create_new_auth_token }
-    #before do
-     # allow_any_instance_of(Api::V1::BaseApiController).to receive(:current_user).and_return(current_user)
-    #end
+
 
     context "自分の記事を削除するとき" do
       it "記事の削除ができる" do
