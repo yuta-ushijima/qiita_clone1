@@ -65,7 +65,6 @@ RSpec.describe "Api::V1::Auth::Registrations", type: :request do
 
       it "ログインできない" do
         subject
-        # expect { subject }.to raise_error ActiveRecord::RecordNotFound
         expect(response).to have_http_status(:unauthorized)
       end
     end
