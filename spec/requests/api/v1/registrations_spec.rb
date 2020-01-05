@@ -13,21 +13,34 @@ RSpec.describe "Api::V1::Auth::Registrations", type: :request do
       end
     end
 
-    # 異常系を実装しようとしたが、そもそもこれらはmodelのテストで弾くので不要と判断した
-    #     context "アカウント名が空のとき" do
-    #       let(:user) { create(:user, name: nil) }
-    #       let(:params) { attributes_for(:user, name: nil) }
-    #
-    #       it "" do
-    #         #subjectでデータを渡す
-    #         #subject
-    #         #reponseは基本的にbodyを使う
-    #         #JSONとして返す
-    #         #res = JSON.parse(response.body)
-    #         binding.pry
-    #         expect{ subject }.to include "can't be blank"
-    #       end
-    #     end
+
+    context "アカウント名が空のとき" do
+      let(:params) { attributes_for(:user, name: nil) }
+
+      it "ユーザー登録できない" do
+        #subjectでデータを渡す
+        subject
+        expect { subject }.to change { User.count }.by(0)
+      end
+    end
+
+    context "emailが空のとき" do
+      let(:params) { attributes_for(:user, email: nil) }
+
+      it "ユーザー登録できない" do
+        subject
+        expect { subject }.to change { User.count }.by(0)
+      end
+    end
+
+    context "passwordが空のとき" do
+      let(:params) { attributes_for(:user, password: nil) }
+
+      it "ユーザー登録ができない" do
+        subject
+        expect { subject }.to change { User.count }.by(0)
+      end
+    end
   end
 
   describe "POST /api/v1/auth/sign_in" do
