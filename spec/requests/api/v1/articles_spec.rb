@@ -46,7 +46,6 @@ RSpec.describe "Api::V1::Articles", type: :request do
   end
 
   describe "POST /api/v1/articles" do
-
     subject { post(api_v1_articles_path, params: params, headers: headers) }
 
     let(:params) { { article: attributes_for(:article) } }
@@ -95,7 +94,6 @@ RSpec.describe "Api::V1::Articles", type: :request do
     let(:current_user) { create(:user) }
     let(:params) { { article: attributes_for(:article) } }
     let(:headers) { authenticate_user_headers(current_user) }
-
 
     context "自分の記事を削除するとき" do
       it "記事の削除ができる" do
