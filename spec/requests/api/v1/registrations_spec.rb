@@ -5,7 +5,6 @@ RSpec.describe "Api::V1::Auth::Registrations", type: :request do
     subject { post(api_v1_user_registration_path, params: params) }
 
     context "正しい情報が送られたとき" do
-      # let(:user) { create(:user) }
       let(:params) { attributes_for(:user) }
       it "ユーザー登録ができる" do
         expect { subject }.to change { User.count }.by(1)
@@ -18,7 +17,6 @@ RSpec.describe "Api::V1::Auth::Registrations", type: :request do
       let(:params) { attributes_for(:user, name: nil) }
 
       it "ユーザー登録できない" do
-        #subjectでデータを渡す
         subject
         expect { subject }.to change { User.count }.by(0)
       end
