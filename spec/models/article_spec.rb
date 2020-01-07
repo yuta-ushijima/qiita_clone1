@@ -1,11 +1,24 @@
 require "rails_helper"
 
 RSpec.describe Article, type: :model do
-  context "正常系" do
+  context "正常系(statusの指定がないとき)" do
     let(:article) { build(:article) }
 
-    it "記事が有効である" do
+    it "下書きとして記事が有効である" do
+      binding.pry
       expect(article).to be_valid
+      expect(article.status).to eq "draft"
+      expect{ article.save! }.to change{ Article.where(status: "draft").count }.by(1)
+    end
+  end
+
+  context "正常系（statusがpubrishedのとき）" do
+    let(:article) { build(:article, status: "published") }
+
+    it "公開記事として有効である" do
+      expect(article).to be_valid
+      expect(article.status).to eq "published"
+      expect{ article.save! }.to change{ Article.where(status: "published").count }.by(1)
     end
   end
 
