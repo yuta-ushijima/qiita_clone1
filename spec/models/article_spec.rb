@@ -5,10 +5,9 @@ RSpec.describe Article, type: :model do
     let(:article) { build(:article) }
 
     it "下書きとして記事が有効である" do
-      binding.pry
       expect(article).to be_valid
       expect(article.status).to eq "draft"
-      expect{ article.save! }.to change{ Article.where(status: "draft").count }.by(1)
+      expect { article.save! }.to change { Article.where(status: "draft").count }.by(1)
     end
   end
 
@@ -18,7 +17,7 @@ RSpec.describe Article, type: :model do
     it "公開記事として有効である" do
       expect(article).to be_valid
       expect(article.status).to eq "published"
-      expect{ article.save! }.to change{ Article.where(status: "published").count }.by(1)
+      expect { article.save! }.to change { Article.where(status: "published").count }.by(1)
     end
   end
 

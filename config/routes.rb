@@ -3,11 +3,11 @@
 Rails.application.routes.draw do
   root "homes#index"
 
-   # reload 対策
-   get "sign_up", to: "homes#index"
-   get "sign_in", to: "homes#index"
-   get "articles/new", to: "homes#index"
-   get "articles/:id", to: "homes#index"
+  # reload 対策
+  get "sign_up", to: "homes#index"
+  get "sign_in", to: "homes#index"
+  get "articles/new", to: "homes#index"
+  get "articles/:id", to: "homes#index"
 
   namespace :api do
     namespace :v1 do
