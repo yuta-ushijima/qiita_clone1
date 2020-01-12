@@ -54,15 +54,13 @@ end
 
 describe "#published" do
   before do
-    create_list(:article, 10 ,:published)
+    create_list(:article, 10, :published)
   end
 
   it "publishedの検索ができる" do
     expect(Article.published).to eq Article.where(status: "published")
   end
 end
-
-
 
 describe "#status" do
   context "statusがdraftのとき" do
@@ -110,11 +108,11 @@ describe "#published?" do
   end
 
   context "publishedのとき" do
-      let(:article) { create(:article, :published) }
+    let(:article) { create(:article, :published) }
 
-      it "true" do
-        expect(article.published?).to eq true
-      end
+    it "true" do
+      expect(article.published?).to eq true
+    end
   end
 end
 
