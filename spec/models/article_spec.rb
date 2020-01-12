@@ -43,6 +43,8 @@ RSpec.describe Article, type: :model do
 end
 
 describe "#draft" do
+  subject { Article.draft }
+
   before do
     create_list(:article, 10)
   end
@@ -53,6 +55,8 @@ describe "#draft" do
 end
 
 describe "#published" do
+  subject { Article.published }
+
   before do
     create_list(:article, 10, :published)
   end
@@ -63,6 +67,8 @@ describe "#published" do
 end
 
 describe "#status" do
+  subject { article.status }
+
   context "statusがdraftのとき" do
     let(:article) { create(:article, :draft) }
 
@@ -81,6 +87,8 @@ describe "#status" do
 end
 
 describe "#draft?" do
+  subject { article.draft? }
+
   context "statusがdraftのとき" do
     let(:article) { create(:article, :draft) }
 
@@ -99,6 +107,8 @@ describe "#draft?" do
 end
 
 describe "#published?" do
+  subject { article.published? }
+
   context "draftのとき" do
     let(:article) { create(:article, :draft) }
 
@@ -117,6 +127,8 @@ describe "#published?" do
 end
 
 describe "#published!" do
+  subject { article.published! }
+
   context "draftのとき" do
     let(:article) { create(:article, :draft) }
 
@@ -128,6 +140,8 @@ describe "#published!" do
 end
 
 describe "#draft!" do
+  subject { article.draft! }
+
   context "publishedのとき" do
     let(:article) { create(:article, :published) }
 
