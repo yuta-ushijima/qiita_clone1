@@ -12,7 +12,6 @@ RSpec.describe "Api::V1::Auth::Registrations", type: :request do
       end
     end
 
-
     context "アカウント名が空のとき" do
       let(:params) { attributes_for(:user, name: nil) }
 

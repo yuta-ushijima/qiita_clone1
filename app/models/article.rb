@@ -1,4 +1,8 @@
 class Article < ApplicationRecord
+  enum status: {
+    draft: "draft", published: "published"
+  }
+
   belongs_to :user
 
   validates :title, presence: true, uniqueness: true, length: { maximum: 64 }
