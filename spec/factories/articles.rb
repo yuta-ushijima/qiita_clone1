@@ -12,5 +12,9 @@ FactoryBot.define do
     trait :published do
       status { :published }
     end
+
+    trait :draft do
+      status { :draft }
+    end
   end
 end
