@@ -11,7 +11,6 @@ RSpec.describe "Api::V1::Articles::Drafts", type: :request do
       create_list(:article, 35, :published, user: other_user)
     end
 
-    let(:params) { { article: attributes_for(:article) } }
     let(:current_user) { create(:user) }
     let(:other_user) { create(:user) }
     let(:headers) { authenticate_user_headers(current_user) }
@@ -45,6 +44,48 @@ RSpec.describe "Api::V1::Articles::Drafts", type: :request do
       #自分の記事のみ取得している
       expect(count_user).to eq 0
 
+    end
+  end
+
+  describe "GET /api/v1/articles/drafts/:id" do
+    subject { get(api_v1_articles_draft_path(article_id), headers: headers) }
+
+    let(:current_user) { create(:user) }
+    let(:other_user) { create(:user) }
+    let(:headers) { authenticate_user_headers(current_user) }
+
+    context "自分の下書き状態の記事を指定したとき" do
+      let(:article) { create(:article, :draft, user: current_user) }
+      let(:article_id) { article.id }
+
+      it "記事の詳細を表示できる" do
+        subject
+        res = JSON.parse(response.body)
+        expect(response).to have_http_status(:ok)
+        expect(res["id"]).to eq article.id
+        expect(res["title"]).to eq article.title
+        expect(res["body"]).to eq article.body
+        expect(res["updated_at"]).to be_present
+      end
+    end
+
+    context "自分の公開記事を指定したとき" do
+      let(:article) { create(:article, :published, user: current_user) }
+      let(:article_id) { article.id}
+
+      it "表示できない" do
+        binding.pry
+        expect { subject }.to raise_error ActiveRecord::RecordNotFound
+      end
+    end
+
+    context "他のユーザーの記事を指定したとき" do
+      let(:article) { create(:article, user: other_user) }
+      let(:article_id) { article.id }
+
+      it "表示できない" do
+        expect { subject }.to raise_error ActiveRecord::RecordNotFound
+      end
     end
   end
 
