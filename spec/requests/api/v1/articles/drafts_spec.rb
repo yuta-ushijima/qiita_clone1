@@ -42,6 +42,7 @@ RSpec.describe "Api::V1::Articles::Drafts", type: :request do
       expect(ary_status.include?("published")).to eq false
       # 自分の記事のみ取得している
       expect(count_user).to eq 0
+      binding.pry
     end
   end
 
@@ -72,7 +73,6 @@ RSpec.describe "Api::V1::Articles::Drafts", type: :request do
       let(:article_id) { article.id }
 
       it "表示できない" do
-        binding.pry
         expect { subject }.to raise_error ActiveRecord::RecordNotFound
       end
     end
