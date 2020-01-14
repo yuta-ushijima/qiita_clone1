@@ -42,7 +42,6 @@ RSpec.describe "Api::V1::Articles::Drafts", type: :request do
       expect(ary_status.include?("published")).to eq false
       # 自分の記事のみ取得している
       expect(count_user).to eq 0
-      binding.pry
     end
   end
 
@@ -72,8 +71,14 @@ RSpec.describe "Api::V1::Articles::Drafts", type: :request do
       let(:article) { create(:article, :published, user: current_user) }
       let(:article_id) { article.id }
 
-      it "表示できない" do
-        expect { subject }.to raise_error ActiveRecord::RecordNotFound
+      it "表示できる" do
+        subject
+        res = JSON.parse(response.body)
+        expect(response).to have_http_status(:ok)
+        expect(res["id"]).to eq article.id
+        expect(res["title"]).to eq article.title
+        expect(res["body"]).to eq article.body
+        expect(res["updated_at"]).to be_present
       end
     end
 

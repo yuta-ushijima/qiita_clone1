@@ -7,7 +7,7 @@ class Api::V1::Articles::DraftsController < Api::V1::BaseApiController
   end
 
   def show
-    draft = current_user.articlesd.draft.find(params[:id])
+    draft = current_user.articles.find(params[:id])
     render json: draft
   end
 end
