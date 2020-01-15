@@ -20,7 +20,6 @@ RSpec.describe "Api::V1::Articles::Drafts", type: :request do
       expect(response).to have_http_status(:ok)
       expect(res.length).to eq current_user.articles.draft.count
       expect(res[0].keys).to eq ["id", "title", "body", "updated_at", "status", "user"]
-      expect(current_user.articles.draft.count).to eq 2
     end
   end
 
