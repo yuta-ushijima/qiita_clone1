@@ -22,7 +22,7 @@ RSpec.describe "Api::V1::Current::Articles", type: :request do
       expect(res.map{ |s| s["id"]}).to eq [article2.id, article3.id, article5.id]
       expect(res[0].keys).to eq ["id", "title", "updated_at", "user"]
       expect(res[0]["title"]).to eq article2[:title]
-      expect(res[0]["id"]).to eq article2["id"]
+      expect(res[0]["id"]).to eq article2[:id]
     end
   end
 end
