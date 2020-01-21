@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   # reload 対策
   get "sign_up", to: "homes#index"
+  get "articles/:id/edit", to: "homes#index"
   get "sign_in", to: "homes#index"
   get "articles/new", to: "homes#index"
   get "articles/:id", to: "homes#index"
