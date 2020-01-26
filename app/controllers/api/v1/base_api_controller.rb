@@ -1,5 +1,6 @@
 class Api::V1::BaseApiController < ApplicationController
   include DeviseTokenAuth::Concerns::SetUserByToken
+  protect_from_forgery with: :null_session
 
   alias_method :current_user, :current_api_v1_user
   alias_method :authenticate_user!, :authenticate_api_v1_user!
