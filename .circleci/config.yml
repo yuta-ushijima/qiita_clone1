@@ -27,15 +27,15 @@ jobs:
     steps:
       - checkout
       - save_cache:
-          key: v1-circleci-example-for-rails-{{ .Environment.CIRCLE_SHA1 }}
+          key: v1-qiita_qlone1-{{ .Environment.CIRCLE_SHA1 }}
           paths:
-            - ~/circleci-example-for-rails
+            - ~/qiita_clone1
   bundle_dependencies:
     executor:
       name: default_container
     steps:
       - restore_cache:
-          key: v1-circleci-example-for-rails-{{ .Environment.CIRCLE_SHA1 }}
+          key: v1-qiita_clone1-{{ .Environment.CIRCLE_SHA1 }}
       - restore_cache:
           key: v2-dependencies-{{ checksum "Gemfile.lock" }}
       - install_bundler
@@ -52,7 +52,7 @@ jobs:
       name: default_container
     steps:
       - restore_cache:
-          key: v1-circleci-example-for-rails-{{ .Environment.CIRCLE_SHA1 }}
+          key: v1-qiita_clone1-{{ .Environment.CIRCLE_SHA1 }}
       - restore_cache:
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
       - run:
@@ -91,7 +91,7 @@ jobs:
       name: default_container
     steps:
       - restore_cache: # ソースコードの復元
-          key: v1-circleci-example-for-rails-{{ .Environment.CIRCLE_SHA1 }}
+          key: v1-qiita_clone1-{{ .Environment.CIRCLE_SHA1 }}
       - restore_cache: # vendor/bundleを復元
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
       - install_bundler
