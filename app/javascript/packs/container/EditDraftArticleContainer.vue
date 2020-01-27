@@ -1,3 +1,4 @@
+
 <template>
   <form class="article-form">
     <v-text-field outline single-line v-model="title" name="title" label="タイトル" class="title-form"></v-text-field>
@@ -44,11 +45,12 @@ const headers = {
   }
 };
 @Component
-export default class EditDraftArticleContainer extends Vue {
+export default class ArticlesContainer extends Vue {
   id: string = "";
   title: string = "";
   body: string = "";
   async mounted(): Promise<void> {
+    // only update
     if (this.$route.params.id) {
       await this.fetchArticle(this.$route.params.id);
     }
@@ -79,7 +81,7 @@ export default class EditDraftArticleContainer extends Vue {
   }
   async fetchArticle(id: string): Promise<void> {
     await axios
-      .get(`/api/v1/articles/drafts/${id}`, headers)
+      .get(`/api/v1/articles/${id}`)
       .then(response => {
         this.id = response.data.id;
         this.title = response.data.title;
@@ -105,11 +107,7 @@ export default class EditDraftArticleContainer extends Vue {
       await axios
         .patch(`/api/v1/articles/${this.id}`, params, headers)
         .then(_response => {
-          if (status == Statuses["published"]) {
-            Router.push("/");
-          } else {
-            Router.push("/articles/drafts");
-          }
+          Router.push("/articles/drafts");
         })
         .catch(e => {
           // TODO: 適切な Error 表示
@@ -120,11 +118,7 @@ export default class EditDraftArticleContainer extends Vue {
       await axios
         .post("/api/v1/articles", params, headers)
         .then(_response => {
-          if (status == Statuses["published"]) {
-            Router.push("/");
-          } else {
-            Router.push("/articles/drafts");
-          }
+          Router.push("/articles/drafts");
         })
         .catch(e => {
           // TODO: 適切な Error 表示
