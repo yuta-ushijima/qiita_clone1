@@ -1,3 +1,4 @@
+
 <template>
   <form class="article-form">
     <v-text-field outline single-line v-model="title" name="title" label="タイトル" class="title-form"></v-text-field>
@@ -106,8 +107,7 @@ export default class ArticlesContainer extends Vue {
       await axios
         .patch(`/api/v1/articles/${this.id}`, params, headers)
         .then(_response => {
-          // TODO: 下書きの場合は下書き一覧ページに飛ばす
-          Router.push("/");
+          Router.push("/articles/drafts");
         })
         .catch(e => {
           // TODO: 適切な Error 表示
