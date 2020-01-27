@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "sign_in", to: "homes#index"
   get "articles/new", to: "homes#index"
   get "articles/:id", to: "homes#index"
+  get "articles/mypage", to: "homes#index"
 
   namespace :api do
     namespace :v1 do
