@@ -12,7 +12,7 @@ executors:
       - image: circleci/mysql:5.7-ram
         environment:
           MYSQL_ALLOW_EMPTY_PASSWORD: true
-    working_directory: ~/qiita-qlone1
+    working_directory: ~/qiita_qlone1
 
 commands:
   install_bundler:
