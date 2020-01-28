@@ -37,7 +37,7 @@ jobs:
       - restore_cache:
           key: v1-qiita_clone1-{{ .Environment.CIRCLE_SHA1 }}
       - restore_cache:
-          key: v2-dependencies-{{ checksum "Gemfile.lock" }}
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
       - install_bundler
       - run:
           name: Bundle Install Dependencies
